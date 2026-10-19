@@ -1,0 +1,131 @@
+﻿* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+body { background: #fff; color: #000; overflow: hidden; }
+#presentation { position: relative; width: 100vw; height: 100vh; }
+
+/* Переходы слайдов */
+.slide { position: absolute; inset: 0; background: #fff; opacity: 0; visibility: hidden; transition: opacity 0.6s ease, transform 0.6s ease; display: flex; align-items: center; justify-content: center; transform: scale(0.95); }
+.slide.active { opacity: 1; visibility: visible; z-index: 1; transform: scale(1); }
+
+/* Анимации появления */
+.anim-pop { opacity: 0; transform: scale(0.95); transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.slide.active .anim-pop { opacity: 1; transform: scale(1); }
+.anim-slide-left { opacity: 0; transform: translateX(-50px); transition: all 0.8s ease; }
+.slide.active .anim-slide-left { opacity: 1; transform: translateX(0); }
+.anim-slide-right { opacity: 0; transform: translateX(50px); transition: all 0.8s ease; }
+.slide.active .anim-slide-right { opacity: 1; transform: translateX(0); }
+.anim-fade-in { opacity: 0; transition: opacity 1s ease; transform: translateY(20px); }
+.slide.active .anim-fade-in { opacity: 1; transform: translateY(0); }
+
+/* Общие стили */
+.content { position: relative; z-index: 2; text-align: center; padding: 2rem; width: 100%; }
+.bg-dark { background: #222; color: #fff; }
+.placeholder-content { display: flex; align-items: center; justify-content: center; width: 100%; height: 100vh; }
+.placeholder-content h2 { font-size: 4rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+
+/* --- ОРИЕНТИРОВКА --- */
+#slide-news { background: #e9ecef; }
+.missing-poster { background: #fff; width: 85%; max-width: 1000px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); border-radius: 8px; overflow: hidden; }
+.poster-header { background: #d32f2f; color: #fff; font-size: 1.5rem; font-weight: 900; text-align: center; padding: 12px; text-transform: uppercase; }
+.poster-body { display: flex; padding: 20px; gap: 30px; align-items: center; }
+.poster-photo-box { width: 35%; display: flex; flex-direction: column; align-items: center; }
+.fedor-photo { width: 100%; max-height: 400px; object-fit: contain; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); background: #f8f9fa; }
+.photo-caption { text-align: center; font-size: 0.8rem; color: #666; margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.poster-info { width: 65%; text-align: left; }
+.poster-info h2 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 900; }
+.info-list p { font-size: 1rem; margin-bottom: 8px; line-height: 1.4; }
+.info-list b { font-weight: 900; }
+.poster-alert { background: #ffebee; border-left: 5px solid #d32f2f; padding: 10px 15px; margin: 15px 0; font-size: 1rem; font-weight: 900; color: #b71c1c; text-transform: uppercase; }
+.poster-contact p { font-size: 0.9rem; color: #555; }
+.poster-contact h3 { font-size: 1.8rem; margin-top: 5px; font-weight: 900; }
+.poster-footer { background: #222; color: #fff; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: 700; }
+
+/* --- ЗАСТАВКА И ФИНАЛ --- */
+.outro-content { display: flex; align-items: center; justify-content: center; gap: 30px; }
+.small-logo { height: 140px; }
+.outro-text h1 { font-size: 3rem; font-style: italic; font-weight: 900; color: #000; margin: 0; line-height: 1; text-transform: uppercase; }
+.outro-text h1 span { font-size: 5rem; color: #102a66; }
+#slide-outro .outro-text h1 { font-size: 4rem; color: #102a66; }
+#slide-outro .outro-text h1 span { font-size: 5rem; color: #000; }
+#slide-outro .outro-text p { font-size: 2rem; color: #102a66; margin: 0; font-weight: 700; }
+
+/* --- ШКАЛА ЗВУКА --- */
+#slide-sound { background: #fff; }
+.sound-container { display: flex; width: 100%; max-width: 1600px; height: 75vh; gap: 40px; padding: 20px; }
+
+.sound-side { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  background: #fafafa; /* Левая чуть серая */
+  border-radius: 20px; 
+  padding: 40px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+  overflow: hidden;
+  position: relative;
+}
+
+/* ПРАВАЯ ЧАСТЬ: ДЕЛАЕМ БЕЛОЙ */
+.fedor-side { 
+  background: #fff; 
+  border: 2px solid #f0f0f0; /* Легкая рамка, чтобы отделить от фона */
+}
+
+.sound-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; z-index: 10; }
+.normal-title { color: #2e7d32; }
+.fedor-title-scale { color: #d32f2f; } /* Текст красный, как просил */
+
+.speaker-graphic {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* Старый динамик (без фильтров, так как фоны серый и белый) */
+.clean-speaker {
+  width: 120px; 
+  height: auto;
+  z-index: 2;
+}
+
+/* --- ЛУЧИ --- */
+.beam-svg {
+  position: absolute;
+  left: 70px; 
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: visible;
+}
+
+.beam { stroke: none; }
+
+/* Зеленые лучи */
+.normal-beam { fill: rgba(76, 175, 80, 0.4); }
+.normal-beam:nth-child(1) { fill: rgba(76, 175, 80, 0.6); }
+.normal-beam:nth-child(2) { fill: rgba(76, 175, 80, 0.3); }
+
+/* Красные лучи */
+.fedor-beam { fill: rgba(244, 67, 54, 0.5); }
+.fedor-beam:nth-child(1) { fill: rgba(244, 67, 54, 0.7); }
+.fedor-beam:nth-child(2) { fill: rgba(244, 67, 54, 0.4); }
+
+/* Мерцание */
+.pulse-svg { animation: beamPulse 1s infinite alternate; }
+.normal-beam.pulse-svg { fill: rgba(0, 230, 118, 0.6); filter: drop-shadow(0 0 10px #00e676); }
+.fedor-beam.pulse-svg { fill: rgba(255, 0, 0, 0.7); filter: drop-shadow(0 0 20px #ff0000); animation: beamPulse 0.4s infinite alternate; }
+
+@keyframes beamPulse {
+  0% { opacity: 0.5; filter: brightness(1); }
+  100% { opacity: 1; filter: brightness(1.5); }
+}
+
+/* Прогресс */
+#progress { position: fixed; bottom: 0; left: 0; width: 100%; height: 5px; background: rgba(0,0,0,0.1); z-index: 100; }
+#progress-bar { height: 100%; width: 0%; background: #102a66; transition: width 0.3s ease; }
+#counter { position: fixed; bottom: 20px; right: 20px; font-size: 1rem; color: #102a66; font-weight: 900; z-index: 100; }
