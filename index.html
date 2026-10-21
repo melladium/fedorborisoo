@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -13,25 +13,29 @@
 
   <div id="presentation">
 
-    <!-- 1. Ничего -->
+    <!-- 1. Белый экран с кнопкой -->
     <section class="slide active" id="slide-intro">
-      <div class="content"></div>
+      <div class="content">
+        <button class="btn-fullscreen" onclick="goFullscreen()">
+          <span>⛶</span> Развернуть
+        </button>
+      </div>
     </section>
 
     <!-- 2. Заглушка МЕДИА НЬЮС -->
     <section class="slide" id="slide-logo-1">
       <div class="content outro-content">
         <img src="https://i.postimg.cc/Sx9KwMtx/Snimok-ekrana-2026-10-19-223021.png" alt="Logo" class="small-logo anim-slide-right">
-        <div class="outro-text anim-slide-left">
-          <h1><span>MEDIA</span> NEWS</h1>
-        </div>
+        <div class="outro-text anim-slide-left"><h1><span>MEDIA</span> NEWS</h1></div>
       </div>
     </section>
 
     <!-- 3. Сцена (Видео класса) -->
     <section class="slide" id="slide-scene">
-      <div class="content placeholder-content bg-dark">
-        <h2 class="anim-fade-in">Тут видео класса</h2>
+      <div class="video-padding-wrapper">
+        <video id="intro-video" class="padded-media" playsinline>
+          <source src="assets/vstuplenie.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
@@ -63,111 +67,104 @@
       </div>
     </section>
 
-    <!-- 5. Заглушка МЕДИА НЬЮС -->
+    <!-- 5. Заглушка -->
     <section class="slide" id="slide-logo-2">
       <div class="content outro-content">
         <img src="https://i.postimg.cc/Sx9KwMtx/Snimok-ekrana-2026-10-19-223021.png" alt="Logo" class="small-logo anim-slide-right">
-        <div class="outro-text anim-slide-left">
-          <h1><span>MEDIA</span> NEWS</h1>
-        </div>
+        <div class="outro-text anim-slide-left"><h1><span>MEDIA</span> NEWS</h1></div>
       </div>
     </section>
 
     <!-- 6. Интервью -->
     <section class="slide" id="slide-interview">
-      <div class="content placeholder-content bg-dark">
-        <h2 class="anim-fade-in">Здесь должно быть интервью</h2>
+      <div class="content">
+        <h2 class="anim-fade-in" style="color:#000; margin-bottom: 20px;">Здесь должно быть интервью</h2>
+        <video class="small-video anim-scale-in" controls playsinline>
+          <source src="assets/interview.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
-    <!-- 7. Заглушка МЕДИА НЬЮС -->
+    <!-- 7. Заглушка -->
     <section class="slide" id="slide-logo-3">
       <div class="content outro-content">
         <img src="https://i.postimg.cc/Sx9KwMtx/Snimok-ekrana-2026-10-19-223021.png" alt="Logo" class="small-logo anim-slide-right">
-        <div class="outro-text anim-slide-left">
-          <h1><span>MEDIA</span> NEWS</h1>
-        </div>
+        <div class="outro-text anim-slide-left"><h1><span>MEDIA</span> NEWS</h1></div>
       </div>
     </section>
 
-    <!-- 8. Реклама валенки -->
+    <!-- 8. Реклама ВАЛЕНКИ (КАРТИНКА) -->
     <section class="slide" id="slide-ad">
-      <div class="content placeholder-content bg-dark">
-        <h2 class="anim-fade-in">Тут реклама валенки</h2>
+      <div class="video-padding-wrapper">
+        <img src="https://i.postimg.cc/PqWGq63b/photo-2026-10-14-11-19-19.jpg" alt="Реклама валенки" class="padded-media">
       </div>
     </section>
 
-    <!-- 9. Заглушка МЕДИА НЬЮС -->
+    <!-- 9. Заглушка -->
     <section class="slide" id="slide-logo-4">
       <div class="content outro-content">
         <img src="https://i.postimg.cc/Sx9KwMtx/Snimok-ekrana-2026-10-19-223021.png" alt="Logo" class="small-logo anim-slide-right">
-        <div class="outro-text anim-slide-left">
-          <h1><span>MEDIA</span> NEWS</h1>
-        </div>
+        <div class="outro-text anim-slide-left"><h1><span>MEDIA</span> NEWS</h1></div>
       </div>
     </section>
 
-    <!-- 10. Сцена о погоде -->
+    <!-- 10. Погода -->
     <section class="slide" id="slide-weather">
-      <div class="content placeholder-content">
-        <h2 class="anim-fade-in" style="color: #000;">Тут сцена о погоде</h2>
-      </div>
+      <video class="bg-video" autoplay muted loop playsinline>
+        <source src="assets/snow.mp4" type="video/mp4">
+      </video>
+      <div class="video-label">Тут погода</div>
     </section>
 
-    <!-- 11. Заглушка МЕДИА НЬЮС -->
+    <!-- 11. Заглушка -->
     <section class="slide" id="slide-logo-5">
       <div class="content outro-content">
         <img src="https://i.postimg.cc/Sx9KwMtx/Snimok-ekrana-2026-10-19-223021.png" alt="Logo" class="small-logo anim-slide-right">
-        <div class="outro-text anim-slide-left">
-          <h1><span>MEDIA</span> NEWS</h1>
-        </div>
+        <div class="outro-text anim-slide-left"><h1><span>MEDIA</span> NEWS</h1></div>
       </div>
     </section>
 
-    <!-- 12. Децибелы -->
+    <!-- 12. Децибелы (ОБЩИЙ ФОН) -->
     <section class="slide" id="slide-sound">
       <div class="sound-container">
-        
-        <!-- Левая часть -->
         <div class="sound-side">
           <h2 class="sound-title normal-title">Homo Sapiens</h2>
           <div class="speaker-graphic">
-            <!-- Старый динамик -->
             <img src="https://i.postimg.cc/ry46S2s9/Snimok-ekrana-2026-10-20-000407.png" alt="Speaker" class="clean-speaker">
-            
-            <svg class="beam-svg" viewBox="0 0 500 400">
-              <polygon class="beam normal-beam" points="0,180 200,130 200,270 0,220" />
-              <polygon class="beam normal-beam" points="0,170 350,90 350,310 0,230" />
-              <polygon class="beam normal-beam pulse-svg" points="0,160 500,50 500,350 0,240" />
+            <svg class="beam-svg" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid meet">
+              <polygon class="beam normal-beam b1" points="0,180 100,140 100,260 0,220" />
+              <polygon class="beam normal-beam b2" points="100,140 200,110 200,290 100,260" />
+              <text x="50" y="110" class="db-label">30 db</text>
+              <text x="150" y="80" class="db-label">60 db</text>
             </svg>
           </div>
         </div>
 
-        <!-- Правая часть -->
+        <!-- Разделитель -->
+        <div class="divider"></div>
+
         <div class="sound-side fedor-side">
           <h2 class="sound-title fedor-title-scale">Фёдор Борисович</h2>
           <div class="speaker-graphic">
-            <!-- Старый динамик (без фильтров, так как фон белый) -->
             <img src="https://i.postimg.cc/ry46S2s9/Snimok-ekrana-2026-10-20-000407.png" alt="Speaker" class="clean-speaker">
-            
-            <svg class="beam-svg" viewBox="0 0 500 400">
-              <polygon class="beam fedor-beam" points="0,190 300,100 300,300 0,210" />
-              <polygon class="beam fedor-beam" points="0,180 400,50 400,350 0,220" />
-              <polygon class="beam fedor-beam pulse-svg" points="0,170 500,0 500,400 0,230" />
+            <svg class="beam-svg" viewBox="0 0 500 400" preserveAspectRatio="xMidYMid meet">
+              <polygon class="beam fedor-beam f1" points="0,190 130,155 130,245 0,210" />
+              <polygon class="beam fedor-beam f2" points="130,155 280,110 280,290 130,245" />
+              <polygon class="beam fedor-beam f3" points="280,110 450,30 450,370 280,290" />
+              <text x="65" y="125" class="db-label red-label">80 db</text>
+              <text x="205" y="80" class="db-label red-label">110 db</text>
+              <text x="365" y="0" class="db-label red-label">140 db</text>
             </svg>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- 13. Заглушка МЕДИА НЬЮС -->
+    <!-- 13. Заглушка -->
     <section class="slide" id="slide-logo-6">
       <div class="content outro-content">
         <img src="https://i.postimg.cc/Sx9KwMtx/Snimok-ekrana-2026-10-19-223021.png" alt="Logo" class="small-logo anim-slide-right">
-        <div class="outro-text anim-slide-left">
-          <h1><span>MEDIA</span> NEWS</h1>
-        </div>
+        <div class="outro-text anim-slide-left"><h1><span>MEDIA</span> NEWS</h1></div>
       </div>
     </section>
 
@@ -186,7 +183,6 @@
 
   <div id="progress"><div id="progress-bar"></div></div>
   <div id="counter">1 / 14</div>
-
   <script src="script.js"></script>
 </body>
 </html>
