@@ -15,6 +15,16 @@ function goFullscreen() {
   }
 }
 
+function playInterviewVideo() {
+  const video = document.getElementById('interview-video');
+  if (video) {
+    video.currentTime = 0;
+    video.volume = 1.0;
+    video.muted = false;
+    video.play().catch(e => console.log("Ошибка автозапуска интервью: ", e));
+  }
+}
+
 function playVideos(slide) {
   const videos = slide.querySelectorAll('video');
   videos.forEach(video => {
@@ -44,8 +54,10 @@ function goTo(index) {
       introVideo.muted = false;
       introVideo.play().catch(e => console.log("Ошибка: ", e));
     }
+  } else if (slides[current].id === 'slide-interview') {
+    playInterviewVideo(); 
   } else {
-    playVideos(slides[current]);
+    playVideos(slides[current]); 
   }
   
   updateUI();
